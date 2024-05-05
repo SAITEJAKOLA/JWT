@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "793e388e-4a0c-42ca-95f8-f0842fd48b81",
+		"name": "JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20190639"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{local}}/"
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"stklogin@acc.in\",\r\n    \"password\": \"HelloWorld@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{local}}/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/auth/allusers"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"stklogin@acc.in\",\r\n    \"password\": \"HelloWorld@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{local}}/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Getpublicposts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{local}}/posts/publicPosts"
+			},
+			"response": []
+		},
+		{
+			"name": "Getprivateposts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN0a2xvZ2luQGFjYy5pbiIsImlhdCI6MTcxNDg5NjE3MiwiZXhwIjoxNzE0OTMyMTcyfQ._bM1kmc_WvS7M0LEd7symDrEslKjAeWkO9RPiTBdXqY",
+						"uuid": "f741fa39-82ec-45cd-930b-356e150aa267"
+					}
+				],
+				"url": {
+					"raw": "{{local}}/posts/privatePosts",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"posts",
+						"privatePosts"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
