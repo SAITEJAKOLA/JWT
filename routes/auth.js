@@ -63,11 +63,11 @@ router.post(
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
   const secret = process.env.SECRET;
-  const user = await User.findOne({ email });
+  const user = await User.findOne({ email }).select('+password');
   if (!user) {
     return res.status(400).json({
       sucess: false,
-      errors: [{ message: 'Invalid   Credentials!!' }],
+      errors: [{ message: 'Invalid Credentials!!' }],
     });
   }
   const isMatch = await bcrypt.compare(password, user.password);
